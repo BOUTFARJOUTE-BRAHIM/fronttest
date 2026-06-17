@@ -3,7 +3,7 @@ trigger:
   - main
 
 pool:
-  vmImage: ubuntu
+  vmImage: 'ubuntu-latest'
 
 
 stages:
@@ -19,9 +19,18 @@ stages:
 
       - job: preparer_dockerfile
         steps:
-          - script: |
+         #  - checkout: self
+           - task: Docker@2
+             inputs:
+              command: login
+              containerRegistry: dockerAuth
+
+        
+           - script: |
               cd ./fronttest
               docker build -t  brahimbtf/frontedn0123456  . 
+              sleep 15
+              docker push brahimbtf/frontedn0123456 
 
 
 
