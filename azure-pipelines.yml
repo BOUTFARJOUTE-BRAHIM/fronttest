@@ -13,7 +13,7 @@ stages:
         steps:
           - script: |
               npm install
-              sleep 15
+              sleep 5
               npm run build 
 
       - job: preparer_dockerfile
@@ -27,7 +27,7 @@ stages:
         
            - script: |
               docker build -t  brahimbtf/frontedn0123456  . 
-              sleep 15
+              sleep 5
               docker push brahimbtf/frontedn0123456 
 
 
