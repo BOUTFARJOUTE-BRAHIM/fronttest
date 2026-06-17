@@ -12,7 +12,6 @@ stages:
       - job: recupere_code
         steps:
           - script: |
-              cd ./fronttest
               npm install
               sleep 15
               npm run build 
@@ -27,7 +26,6 @@ stages:
 
         
            - script: |
-              cd ./fronttest
               docker build -t  brahimbtf/frontedn0123456  . 
               sleep 15
               docker push brahimbtf/frontedn0123456 
