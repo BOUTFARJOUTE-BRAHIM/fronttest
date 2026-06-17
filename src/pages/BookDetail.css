@@ -1,0 +1,203 @@
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+  font-size: var(--font-size-sm);
+  opacity: 0;
+}
+
+.breadcrumb a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-accent);
+}
+
+.breadcrumb-sep {
+  color: var(--color-text-muted);
+}
+
+.breadcrumb-current {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+/* Detail Content */
+.detail-content {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: var(--space-12);
+  margin-bottom: var(--space-16);
+}
+
+.detail-cover {
+  opacity: 0;
+}
+
+.cover-wrapper {
+  overflow: hidden;
+  padding: 0;
+}
+
+.cover-wrapper:hover {
+  transform: none;
+}
+
+.cover-wrapper img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.detail-availability {
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+.detail-info {
+  opacity: 0;
+}
+
+.detail-category {
+  margin-bottom: var(--space-4);
+  display: inline-block;
+}
+
+.detail-title {
+  font-size: var(--font-size-4xl);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: var(--space-2);
+}
+
+.detail-author {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.detail-author strong {
+  color: var(--color-text-primary);
+}
+
+.detail-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.detail-rating .stars {
+  font-size: var(--font-size-xl);
+}
+
+.detail-rating-number {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-warning);
+}
+
+.detail-description {
+  color: var(--color-text-secondary);
+  line-height: 1.9;
+  margin-bottom: var(--space-8);
+  font-size: var(--font-size-base);
+}
+
+/* Meta Grid */
+.detail-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-4);
+  padding: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.detail-meta:hover {
+  transform: none;
+}
+
+.meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.meta-icon {
+  font-size: 1.2rem;
+  margin-top: 2px;
+}
+
+.meta-label {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.meta-value {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Similar Books */
+.detail-similar {
+  padding-top: var(--space-12);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Error */
+.detail-error {
+  text-align: center;
+  padding: var(--space-20) 0;
+}
+
+.error-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.detail-error h2 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-2);
+}
+
+.detail-error p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+}
+
+@media (max-width: 768px) {
+  .detail-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .cover-wrapper img {
+    max-height: 400px;
+    object-position: top;
+  }
+
+  .detail-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .detail-meta {
+    grid-template-columns: 1fr 1fr;
+  }
+}
