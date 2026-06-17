@@ -1,0 +1,28 @@
+
+trigger:
+  - main
+
+pool:
+  vmImage: ubuntu
+
+
+stages:
+  - stage: build
+    jobs:
+      - job: recupere_code
+        steps:
+          - script: |
+              cd ./fronttest
+              npm install
+              sleep 15
+              npm run build 
+
+      - job: preparer_dockerfile
+        steps:
+          - script: |
+              cd ./fronttest
+              docker build -t  brahimbtf/frontedn0123456  . 
+
+
+
+
