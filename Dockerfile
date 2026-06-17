@@ -10,4 +10,4 @@ RUN sleep 15
 RUN npm run build
 RUN sleep 5
 
-CMD ["npm", "run", "dev -- -- host"]
+CMD ["npm", "run", "dev", "--", "--host"]
